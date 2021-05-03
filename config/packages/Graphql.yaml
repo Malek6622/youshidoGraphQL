@@ -1,0 +1,5 @@
+graphql:
+  schema_class: 'App\GraphQl\Schema'
+  security:
+    guard:
+      field: false # for any field security
