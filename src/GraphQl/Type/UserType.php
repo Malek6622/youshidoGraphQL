@@ -24,15 +24,16 @@ class UserType extends AbstractObjectType
      */
     public function build($config)
     {
-        $config->addField('products',new ListType(new ProductType()));
         $config->addFields(
             [
+
                 'id' => new NonNullType(new IdType()),
                 'name' => new StringType(),
                 'email' => new StringType(),
                 'phoneNumber' => new NumberType(),
                 'cin' => new NumberType(),
                 'department' => new DepartmentType(),
+                'products' => new ListType(new ProductType())
             ]
         );
     }

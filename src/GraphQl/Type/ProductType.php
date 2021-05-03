@@ -24,12 +24,12 @@ class ProductType extends AbstractObjectType
      */
     public function build($config)
     {
-        $config->addField('users', new ListType(new UserType()));
         $config->addFields(
             [
                 'id' => new NonNullType(new IdType()),
                 'name' => new StringType(),
-                'department' => new DepartmentType()
+                'department' => new DepartmentType(),
+                'users'=> new ListType(new UserType())
             ]
         );
     }

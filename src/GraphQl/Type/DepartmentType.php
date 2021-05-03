@@ -18,12 +18,12 @@ class DepartmentType extends AbstractObjectType
      */
     public function build($config)
     {
-        $config->addField('products', new ListType(new ProductType()));
-        $config->addField('users', new ListType(new UserType()));
         $config->addFields(
             [
                 'id' => new NonNullType(new IdType()),
-                'name' => new StringType()
+                'name' => new StringType(),
+                'products'=> new ListType(new ProductType()),
+                'users' => new ListType(new UserType())
             ]
         );
     }
